@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'awesome-print'
+gem 'awesome_print'
 gem 'font-awesome-rails'
 gem 'devise'
 
