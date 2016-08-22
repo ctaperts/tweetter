@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'awesome_print'
-gem 'font-awesome-rails'
-gem 'devise'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -34,9 +31,19 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+gem 'bootstrap-sass', '~>3.3.6'
+gem 'font-awesome-rails'
+gem 'devise'
+gem 'paperclip', '~> 4.3'
+gem 'stamp'
+
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'awesome_print'
 end
 
 group :development do
