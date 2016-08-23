@@ -1,4 +1,5 @@
 class TwitsController < ApplicationController
+  before_filter :authenticate_user!
   def index
   end
 
@@ -9,8 +10,19 @@ class TwitsController < ApplicationController
   end
 
   def new
+    @twit = Twit.new
   end
 
-  def _form
+  def create
+    @twit = Twit.new(twit_params)
+    respond_to do |format|
+      if @twit.save 
+	format.html { redirect_to @twit, notice: "Twit saved" }
+      else
+	format.html { render :new }
+      end
+    end
   end
+
+
 end
