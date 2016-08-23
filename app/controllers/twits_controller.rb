@@ -1,6 +1,6 @@
 class TwitsController < ApplicationController
   before_filter :authenticate_user!
-  before_action :set_twit, only: [:show, :edit, :update]
+  before_action :set_twit, only: [:show, :edit, :update, :destroy]
   def index
     @twits = Twit.all
   end
@@ -33,6 +33,15 @@ class TwitsController < ApplicationController
 	format.html { redirect_to @twit, notice: "Twit saved" }
       else
 	format.html { render :new }
+      end
+    end
+  end
+
+  def destroy
+    @twit.destroy
+    respond_to do |format|
+      if @twit.destroy
+	format.html { redirect_to twits_url, notice: "Twit destroyed" }
       end
     end
   end
