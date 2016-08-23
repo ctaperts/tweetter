@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'profiles/:id' => 'profiles#show', as: :profile
+
+  get 'profiles' => 'profiles#index'
+
+
   root 'twits#index'
 
   resources :twits
