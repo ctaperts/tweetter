@@ -1,2 +1,40 @@
-<h1>Twits#_form</h1>
-<p>Find me in app/views/twits/_form.html.erb</p>
+<%= form_for(@twit) do |f| %>
+  <!--*****************-->
+  <!-- check for errors -->
+  <!--*****************-->
+  <% if @twit.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+	<%= pluralize(@twit.errors.count, "error") %> prohibited this tweet from being saved:
+      </h2>
+      <!-- this loops through the errors -->
+      <ul>
+	  <% @twit.errors.full_messages.each do |error| %>
+	<li>
+	  <%= error %>
+	</li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!--*****************-->
+  <!--*****************-->
+  <!-- the actual form -->
+  <!--*****************-->
+  <!--*****************-->
+
+  <div class="field form-group">
+    <%= f.label :message %>
+    <%= f.text_field :message, class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="action form-group">
+    <%= f.submit class: "btn btn-sm btn-success" %>
+  </div>
+
+<% end %>

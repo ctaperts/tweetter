@@ -1,13 +1,25 @@
 class TwitsController < ApplicationController
   before_filter :authenticate_user!
+  before_action :set_twit, only: [:show, :edit, :update]
   def index
+    @twits = Twit.all
   end
 
   def show
-    @twit = Twit.all
   end
 
   def edit
+  end
+
+  def update
+    # before_action @twit = twit.find(params[:id])
+    respond_to do |format|
+      if @twit.update(twit_params)
+	format.html { redirect_to @twit, notice: "Twit updated" }
+      else
+	format.html { render :edit }
+      end
+    end
   end
 
   def new
@@ -28,6 +40,11 @@ class TwitsController < ApplicationController
   private
 
   def twit_params
+    params.require(:twit).permit(:message, :user_id)
+  end
+
+  def set_twit
+    @twit = Twit.find(params[:id])
   end
 
 end
