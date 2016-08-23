@@ -1,2 +1,17 @@
-<h1>Twits#show</h1>
-<p>Find me in app/views/twits/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>
+    Message: 
+  </strong>
+  <%= @twit.message %>
+  <p>
+    <strong>
+      User: 
+    </strong>
+    <%= @twit.user.username %>
+  </p>
+</p>
+
+<%= link_to 'Edit this twit', edit_twit_path(@twit), class: "btn btn-sm btn-default" %>
+<%= link_to 'Home', twit_path, class: "btn btn-sm btn-default" %>

@@ -4,6 +4,7 @@ class TwitsController < ApplicationController
   end
 
   def show
+    @twit = Twit.all
   end
 
   def edit
@@ -24,5 +25,9 @@ class TwitsController < ApplicationController
     end
   end
 
+  private
+
+  def twit_params
+  end
 
 end
