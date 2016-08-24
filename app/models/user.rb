@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :twits
   has_many :relationships
   has_many :friends, through: :relationships
+  has_many :likes
 
   has_many :inverse_relationships, 
 	    class_name: "Relationship", 
