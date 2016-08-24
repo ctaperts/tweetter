@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :twits
   has_many :relationships
   has_many :friends, through: :relationships
+  has_many :likes
 
   has_many :inverse_relationships, 
 	    class_name: "Relationship", 
@@ -18,4 +19,9 @@ class User < ApplicationRecord
   validates :username,
 	    presence: true,
 	    uniqueness: true
+
+  def likes?(twit)
+    twit.likes.where(user_id: id).any?
+  end
+
 end

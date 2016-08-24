@@ -1,5 +1,6 @@
 class Twit < ApplicationRecord
   belongs_to :user
+  has_many :likes
 
   validates :message, 
 	    presence: true,

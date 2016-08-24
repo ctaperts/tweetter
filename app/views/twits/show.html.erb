@@ -10,6 +10,9 @@
     </strong>
     <%= @twit.user.username %>
   </p>
+  <br>
+  <%= render '/shared/likes' %>
+  <br>
 </p>
 
 <%= link_to 'Edit this twit', edit_twit_path(@twit), class: "btn btn-sm btn-default" %>

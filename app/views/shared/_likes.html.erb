@@ -1,0 +1,14 @@
+<% if current_user.likes?(@twit) %>
+  <%= link_to "Unlike", twit_likes_path(@twit), method: :delete %>
+<% else %>
+  <%= link_to "Like", twit_likes_path(@twit), method: :post %>
+<% end %>
+<br>
+<%= @twit.likes.count %> Like
+<br>
+Liked by: 
+<% @twit.likes.each do |like| %>
+  <br>
+  <%= like.user.username %>
+  <br>
+<% end %>
