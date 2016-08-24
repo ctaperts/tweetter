@@ -1,5 +1,5 @@
 <% if current_user.likes?(@twit) %>
-  <%= link_to "Unlike", twit_likes_path(@twit), method: :delete %>
+  <%= link_to "Unlike", twit_like_path(@twit), method: :delete %>
 <% else %>
   <%= link_to "Like", twit_likes_path(@twit), method: :post %>
 <% end %>
