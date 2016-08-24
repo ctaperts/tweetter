@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   root 'twits#index'
 
+  resources :relationships
   resources :twits
 
   get 'twits/index'
