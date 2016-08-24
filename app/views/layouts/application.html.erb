@@ -10,8 +10,9 @@
 
   <body>
 
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-sm btn-danger" %>
-    <div class="container-fluid">
+    <%=render '/layouts/navbar' %>
+
+    <div style="padding-top:55px;" class="container-fluid">
       <%= yield %>
     </div>
 

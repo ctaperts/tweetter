@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default nav-out">
+  <div class="nav-mid">
+    <div class="tab-menu-down">
+  <% if user_signed_in? %>
+      <%= link_to fa_icon('sign-out 3x'), destroy_user_session_path, method: :delete, class: "pull-right font-awesome-menu", title: 'Sign-out' %>
+      <%= link_to fa_icon('users 3x'), profiles_path, class: "pull-right font-awesome-menu", title: 'Users' %>
+      <%= link_to fa_icon('user 3x'), profile_path(current_user.id), class: "pull-right font-awesome-menu", title: current_user.username + ' profile' %>
+      <%= link_to fa_icon('home 3x'), twits_path, class: "pull-right font-awesome-menu", title: 'Home' %>
+  <% else %>
+      <%= link_to fa_icon('sign-in 3x'), new_user_session_path, class: "pull-right font-awesome-menu", title: 'Sign-in' %>
+      <%= link_to fa_icon('font-awesome 3x'), new_user_registration_path, class: "pull-right font-awesome-menu", title: 'Sign-up' %>
+      <%= link_to fa_icon('home 3x'), twits_path, class: "pull-right font-awesome-menu", title: 'Home' %>
+  <% end %>
+    </div>
+  </div>
+</nav>
+

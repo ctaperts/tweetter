@@ -15,3 +15,53 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+.center-vertical {
+  padding-top:10%;
+}
+
+
+/*
+##################
+##################
+## navbar ########
+##################
+##################
+*/
+.nav-mid a:hover, a:focus {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+.nav-out {
+  //z-index: 90;
+  background-color: #36465d;
+  position: fixed;
+  width: 100%;
+}
+
+
+.nav-mid {
+  //position: relative;
+  width: 100%!important;
+  max-width: 1300px;
+  left: 0;
+  top: 0;
+  margin: auto;
+  padding: 0 20px 0 0;
+  min-width: inherit;
+  height: 54px;
+}
+
+.tab-menu-down {
+  padding-top: 12px;
+}
+.font-awesome-menu {
+  color: #fff;
+  font-size: .7em;
+  padding-left:4px;
+  padding-right:4px;
+}
+
+
+
+
